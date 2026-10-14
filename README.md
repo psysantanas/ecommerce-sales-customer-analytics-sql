@@ -14,7 +14,7 @@ PostgreSQL, CTE (Common Table Expressions), Window Functions (`LAG`, `LEAD`, `RO
 ### 1. Ежемесячные темпы роста выручки (MoM)
 - Выручка агрегируется по месяцам на основе успешно доставленных заказов (`status = 'delivered'`).
 - Прирост месяц-к-месяцу рассчитывается с помощью функции `LAG()`:
-  $$\text{growth\_pct} = \frac{\text{revenue} - \text{prev\_revenue}}{\text{prev\_revenue}} \times 100$$
+  `growth_pct = (revenue - prev_revenue) / prev_revenue * 100`
 
 ### 2. Время до совершения повторного заказа
 - Заказы каждого пользователя нумеруются хронологически (`ROW_NUMBER()`).
